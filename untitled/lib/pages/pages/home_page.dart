@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:untitled/pages/loginDoctor_page.dart';
-import 'package:untitled/pages/loginPaciente_page.dart';
+import 'package:untitled/pages/pages/loginDoctor_page.dart';
+import 'package:untitled/pages/pages/loginPaciente_page.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                        onPressed: () {
                          Navigator.push(
                            context,
-                           MaterialPageRoute(builder: (context) => const MyLogin_Doctor(title: '')),
+                           MaterialPageRoute(builder: (context) => const MyLoginDoctor(title: '')),
                          );
 
                        },

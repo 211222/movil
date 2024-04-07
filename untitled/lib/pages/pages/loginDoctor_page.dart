@@ -4,20 +4,22 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:untitled/pages/registro_page.dart';
+import 'package:untitled/pages/pages/formulario_page.dart';
+import 'package:untitled/pages/pages/loginDoctor_page.dart';
+import 'package:untitled/pages/pages/registroDoctor_page.dart';
 
 
 
-class MyLogin_Paciente extends StatefulWidget {
-  const MyLogin_Paciente({Key? key, required this.title}) : super(key: key);
+class MyLoginDoctor extends StatefulWidget {
+  const MyLoginDoctor({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyLogin_Paciente> createState() => _MyLogin_PacienteState();
+  State<MyLoginDoctor> createState() => _MyLoginDoctorState();
 }
 
-class _MyLogin_PacienteState extends State<MyLogin_Paciente> {
+class _MyLoginDoctorState extends State<MyLoginDoctor> {
   TextEditingController _usernameController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -106,19 +108,19 @@ class _MyLogin_PacienteState extends State<MyLogin_Paciente> {
                             ),
                           ),
                           Positioned(
-                            left: 84 * fem,
-                            top: 127 * fem,
-                            child: Align(
+                            left: 126 * fem,
+                            top: 132 * fem,
+
                               child: SizedBox(
-                                width: 168 * fem,
-                                height: 115 * fem,
+                                width: 114 * fem,
+                                height: 116 * fem,
                                 child: Image.asset(
-                                  'assets/dentista.png',
+                                  'assets/doctor.png',
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                          ),
+
                         ],
                       ),
                     ),
@@ -231,7 +233,7 @@ class _MyLogin_PacienteState extends State<MyLogin_Paciente> {
                                           ),
                                           decoration: InputDecoration(
                                             border: InputBorder.none,
-                                            hintText: '       Correo     ',
+                                            hintText: '       Contraseña    ',
                                             contentPadding: EdgeInsets.only(left: 10 * fem),
                                           ),
                                           controller: _passwordController,
@@ -247,11 +249,11 @@ class _MyLogin_PacienteState extends State<MyLogin_Paciente> {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const MyRegistro(title: '')),
+                                MaterialPageRoute(builder: (context) => const RegistroDoctor(title: '')),
                               );
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xff5b7ad9), // Color de fondo del botón
+                                backgroundColor: Color(0xff5b7ad9), // Color de fondo del botón
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15 * fem), // Bordes redondeados
                               ),
@@ -355,6 +357,8 @@ class _MyLogin_PacienteState extends State<MyLogin_Paciente> {
                                 height: 39 * fem,
                                 child: InkWell(
                                   onTap: () async {
+
+                                    
                                     final GoogleSignIn _googleSignIn = GoogleSignIn();
                                     // Lógica para iniciar sesión con Google
                                     try {

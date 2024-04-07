@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:untitled/pages/informacion_page.dart';
+import 'package:untitled/pages/pages/informacion_page.dart';
 
 
 

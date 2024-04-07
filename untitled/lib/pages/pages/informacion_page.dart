@@ -4,8 +4,8 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:untitled/pages/formulario_page.dart';
-import 'package:untitled/pages/tablaCitas_page.dart';
+import 'package:untitled/pages/pages/formulario_page.dart';
+import 'package:untitled/pages/pages/tablaCitas_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -36,7 +36,7 @@ class _InformacionState extends State<Informacion> {
   Future<void> getPacientes() async {
     try {
       // Realiza una solicitud GET al servidor backend
-      final response = await http.get(Uri.parse('http://192.168.115.60:4000/'));
+      final response = await http.get(Uri.parse('http://192.168.100.11:4000/'));
 
 
       if (response.statusCode == 200) {
@@ -674,7 +674,7 @@ class _InformacionState extends State<Informacion> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>  MyFormulario(title: '' ), // Reemplaza 'OtraPagina' con el nombre de tu página de destino
+                                builder: (context) =>  MyFormulario(), // Reemplaza 'OtraPagina' con el nombre de tu página de destino
                               ),
                             );
                           },

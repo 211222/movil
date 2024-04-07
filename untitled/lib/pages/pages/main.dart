@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/loginPaciente_page.dart';
-import 'package:untitled/pages/datosPaciente_page.dart';
-import 'package:untitled/pages/pantallaCalendario_page.dart';
-import 'package:untitled/pages/registroDoctor_page.dart';
-import 'package:untitled/pages/tablaCitas_page.dart';
-import 'package:untitled/pages/registro_page.dart';
-import 'package:untitled/pages/formulario_page.dart';
-import 'package:untitled/pages/home_page.dart';
-import 'package:untitled/pages/informacion_page.dart';
-import 'package:untitled/pages/loginDoctor_page.dart';
+import 'package:untitled/pages/pages/loginPaciente_page.dart';
+import 'package:untitled/pages/pages/datosPaciente_page.dart';
+import 'package:untitled/pages/pages/pantallaCalendario_page.dart';
+import 'package:untitled/pages/pages/registroDoctor_page.dart';
+import 'package:untitled/pages/pages/tablaCitas_page.dart';
+import 'package:untitled/pages/pages/registro_page.dart';
+import 'package:untitled/pages/pages/formulario_page.dart';
+import 'package:untitled/pages/pages/home_page.dart';
+import 'package:untitled/pages/pages/informacion_page.dart';
+import 'package:untitled/pages/pages/loginDoctor_page.dart';
 
 void main() {
   runApp(const MyApp());
