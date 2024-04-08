@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/pages/pages/loginDoctor_page.dart';
@@ -31,8 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.all(15),
-              child: Row(
+              margin: const EdgeInsets.all(15),
+              child: const Row(
                 children: [
                 ],
               ),
@@ -60,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 24 * ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.2925 * ffem / fem,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
               ),
             ),
@@ -73,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 13 * ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.21 * ffem / fem,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
               ),
             ),
@@ -93,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                        },
                        style: ElevatedButton.styleFrom(
-                           backgroundColor: Color(0xff5b7ad9),
+                           backgroundColor: const Color(0xff5b7ad9),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15 * fem),
                         ),
@@ -105,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontSize: 16*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.21*ffem/fem,
-                          color: Color(0xffffffff),
+                          color: const Color(0xffffffff),
                         ),
                       ),
                     ),
@@ -118,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xff5b7ad9),
+                          backgroundColor: const Color(0xff5b7ad9),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15 * fem),
                         ),
@@ -130,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontSize: 16*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.21*ffem/fem,
-                          color: Color(0xffffffff),
+                          color: const Color(0xffffffff),
                         ),
                       ),
                     ),

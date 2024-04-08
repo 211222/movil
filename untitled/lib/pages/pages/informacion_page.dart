@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:untitled/pages/pages/formulario_page.dart';
-import 'package:untitled/pages/pages/tablaCitas_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class Informacion extends StatefulWidget {
-  const Informacion({Key? key, required this.title, required this.userId}) : super(key: key);
+  const Informacion({super.key, required this.title, required this.userId});
 
 
   final String title;
@@ -59,12 +54,12 @@ class _InformacionState extends State<Informacion> {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // informacinqGr (169:379)
         width: double.infinity,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xffffffff),
         ),
         child: Wrap(
@@ -122,11 +117,11 @@ class _InformacionState extends State<Informacion> {
                         child: Container(
                           decoration: BoxDecoration (
                             borderRadius: BorderRadius.circular(10*fem),
-                            border: Border.all(color: Color(0xffdddddd)),
-                            color: Color(0xffffffff),
+                            border: Border.all(color: const Color(0xffdddddd)),
+                            color: const Color(0xffffffff),
                             boxShadow: [
                               BoxShadow(
-                                color: Color(0x3f000000),
+                                color: const Color(0x3f000000),
                                 offset: Offset(0*fem, 4*fem),
                                 blurRadius: 2*fem,
                               ),
@@ -150,7 +145,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 18*ffem,
                             fontWeight: FontWeight.w700,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -202,7 +197,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -221,7 +216,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -259,7 +254,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -279,7 +274,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -299,7 +294,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2125*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -321,7 +316,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -341,7 +336,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -361,7 +356,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -381,7 +376,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -401,7 +396,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -421,7 +416,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -441,7 +436,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -461,7 +456,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -481,7 +476,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -496,7 +491,7 @@ class _InformacionState extends State<Informacion> {
                         width: 285*fem,
                         height: 0.4*fem,
                         child: Container(
-                          decoration: BoxDecoration (
+                          decoration: const BoxDecoration (
                             color: Color(0xffa6a6a6),
                           ),
                         ),
@@ -512,7 +507,7 @@ class _InformacionState extends State<Informacion> {
                         width: 285*fem,
                         height: 0.4*fem,
                         child: Container(
-                          decoration: BoxDecoration (
+                          decoration: const BoxDecoration (
                             color: Color(0xffa6a6a6),
                           ),
                         ),
@@ -549,7 +544,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -569,7 +564,7 @@ class _InformacionState extends State<Informacion> {
                             fontSize: 12*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.1725*ffem/fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -640,7 +635,7 @@ class _InformacionState extends State<Informacion> {
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               // autogroupxsyr6j8 (QxAigwhDAtty2SbT6QxsYr)
               width: double.infinity,
               height: 392.27*fem,
@@ -674,13 +669,13 @@ class _InformacionState extends State<Informacion> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>  MyFormulario(), // Reemplaza 'OtraPagina' con el nombre de tu página de destino
+                                builder: (context) =>  const MyFormulario(), // Reemplaza 'OtraPagina' con el nombre de tu página de destino
                               ),
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xff5b7ad9), // Color de fondo
-                            foregroundColor: Color(0xffffffff), // Color del texto
+                            backgroundColor: const Color(0xff5b7ad9), // Color de fondo
+                            foregroundColor: const Color(0xffffffff), // Color del texto
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15 * fem), // Borde redondeado
                             ),
@@ -710,8 +705,8 @@ class _InformacionState extends State<Informacion> {
                             Navigator.pop(context);
                           },
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xff5b7ad9), // Color de fondo
-                            foregroundColor: Color(0xffffffff), // Color del texto
+                              backgroundColor: const Color(0xff5b7ad9), // Color de fondo
+                            foregroundColor: const Color(0xffffffff), // Color del texto
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15 * fem), // Borde redondeado
                             ),

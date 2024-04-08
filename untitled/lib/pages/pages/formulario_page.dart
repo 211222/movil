@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/pages/pages/pantallaCalendario_page.dart';
@@ -28,7 +26,35 @@ class _MyFormularioState extends State<MyFormulario> {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    void enviardato(BuildContext context) async {
+    void showExitoDialog(String message) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('¡Guardado exitoso!'),
+            content: Text(message),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Cerrar la alerta
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PantallaCalendario(
+                          title:
+                              ''), // Reemplaza 'OtraPagina' con el nombre de tu página de destino
+                    ),
+                  );
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+
+    void enviardato() async {
       if (edadController.text == '' ||
           tipoSangreController.text == '' ||
           enfermedadesController.text == '' ||
@@ -67,32 +93,7 @@ class _MyFormularioState extends State<MyFormulario> {
               medicamentosController.text);
 
           if (texto == "200") {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: const Text('¡Guardado exitoso!'),
-                  content:
-                      const Text('Los datos se han guardado correctamente.'),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop(); // Cerrar la alerta
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PantallaCalendario(
-                                title:
-                                    ''), // Reemplaza 'OtraPagina' con el nombre de tu página de destino
-                          ),
-                        );
-                      },
-                      child: Text('OK'),
-                    ),
-                  ],
-                );
-              },
-            );
+            showExitoDialog('Los datos se han guardado correctamente.');
           }
         } catch (e) {
           setState(() {
@@ -104,7 +105,7 @@ class _MyFormularioState extends State<MyFormulario> {
     }
 
     return SingleChildScrollView(
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         child: TextButton(
           onPressed: () {},
@@ -114,7 +115,7 @@ class _MyFormularioState extends State<MyFormulario> {
           child: Container(
             padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 39 * fem),
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color(0xffffffff),
             ),
             child: Column(
@@ -175,150 +176,356 @@ class _MyFormularioState extends State<MyFormulario> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // autogrouppcnzBmx (QxAZjNHczPAds5wELEPCNz)
+                                // autogrouprf3t9vE (QxAU9H6dpsMUEgrFG5rF3t)
                                 margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 0 * fem, 13 * fem),
-                                padding: EdgeInsets.fromLTRB(
-                                    15 * fem, 13 * fem, 15 * fem, 19 * fem),
+                                    0 * fem, 0 * fem, 0 * fem, 15 * fem),
                                 width: double.infinity,
-                                height: 50 * fem,
+                                height: 47 * fem,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Color(0xff262c33)),
+                                  border: Border.all(
+                                      color: const Color(0xffbbbbbb)),
                                   borderRadius: BorderRadius.circular(15 * fem),
                                 ),
-                                child: TextFormField(
-                                  style: GoogleFonts.libreFranklin(
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.21 * ffem / fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Edad',
-                                    contentPadding:
-                                        EdgeInsets.only(left: 40 * fem),
-                                  ),
-                                  controller: edadController,
-                                ),
-                              ),
-                              Container(
-                                // autogrouplk9c2Gn (QxAZpHK6jTTusShyoLLk9c)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 0 * fem, 12 * fem),
-                                padding: EdgeInsets.fromLTRB(
-                                    15 * fem, 13 * fem, 15 * fem, 19 * fem),
-                                width: double.infinity,
-                                height: 50 * fem,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Color(0xff262c33)),
-                                  borderRadius: BorderRadius.circular(15 * fem),
-                                ),
-                                child: TextFormField(
-                                  style: GoogleFonts.libreFranklin(
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.21 * ffem / fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Tipo de sangre',
-                                    contentPadding:
-                                        EdgeInsets.only(left: 40 * fem),
-                                  ),
-                                  controller: tipoSangreController,
-                                ),
-                              ),
-                              Container(
-                                // autogroupwjb8Gwp (QxAZtnBc4EgmujkbeiWJB8)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 0 * fem, 14 * fem),
-                                padding: EdgeInsets.fromLTRB(
-                                    15 * fem, 14 * fem, 15 * fem, 18 * fem),
-                                width: double.infinity,
-                                height: 50 * fem,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Color(0xff262c33)),
-                                  borderRadius: BorderRadius.circular(15 * fem),
-                                ),
-                                child: TextFormField(
-                                  style: GoogleFonts.libreFranklin(
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.21 * ffem / fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Enfermedades',
-                                    contentPadding:
-                                        EdgeInsets.only(left: 40 * fem),
-                                  ),
-                                  controller: enfermedadesController,
-                                ),
-                              ),
-                              Container(
-                                // autogroupm3ewwYA (QxAZyXYhEPkgjGdhGjM3eW)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 0 * fem, 12 * fem),
-                                padding: EdgeInsets.fromLTRB(
-                                    15 * fem, 13 * fem, 15 * fem, 19 * fem),
-                                width: double.infinity,
-                                height: 50 * fem,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Color(0xff262c33)),
-                                  borderRadius: BorderRadius.circular(15 * fem),
-                                ),
-                                child: TextFormField(
-                                  style: GoogleFonts.libreFranklin(
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.21 * ffem / fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Alergias',
-                                    contentPadding:
-                                        EdgeInsets.only(left: 40 * fem),
-                                  ),
-                                  controller: alergiasController,
-                                ),
-                              ),
-                              SingleChildScrollView(
-                                scrollDirection: Axis
-                                    .vertical, // Esto asegura que el scroll sea vertical
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(
-                                      0 * fem, 0 * fem, 0 * fem, 12 * fem),
-                                  padding: EdgeInsets.fromLTRB(
-                                      15 * fem, 14 * fem, 15 * fem, 18 * fem),
-                                  width: double.infinity,
-                                  height: 50 * fem,
-                                  decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0xff262c33)),
-                                    borderRadius:
-                                        BorderRadius.circular(15 * fem),
-                                  ),
-                                  child: TextFormField(
-                                    style: GoogleFonts.libreFranklin(
-                                      fontSize: 12 * ffem,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.21 * ffem / fem,
-                                      color: Color(0xff000000),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      left: 0 * fem,
+                                      top: 0 * fem,
+                                      child: Align(
+                                        child: SizedBox(
+                                          width: 304 * fem,
+                                          height: 47 * fem,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      15 * fem),
+                                              // border: Border.all(color: Color(0xff000000)),
+                                            ),
+                                            child: TextFormField(
+                                              style: GoogleFonts.libreFranklin(
+                                                fontSize: 15 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.21 * ffem / fem,
+                                                color: const Color(0xff000000),
+                                              ),
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                hintText: '       Edad    ',
+                                                contentPadding: EdgeInsets.only(
+                                                    left: 40 * fem),
+                                                errorBorder:
+                                                    const OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    28)),
+                                                        borderSide: BorderSide(
+                                                          width: 1,
+                                                          color: Colors.red,
+                                                        )),
+                                                focusedErrorBorder:
+                                                    const OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(28)),
+                                                  borderSide: BorderSide(
+                                                    width: 1,
+                                                    color: Colors.red,
+                                                  ),
+                                                ),
+                                              ),
+                                              controller: edadController,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                     ),
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: 'Medicamentos',
-                                      contentPadding:
-                                          EdgeInsets.only(left: 40 * fem),
-                                    ),
-                                    controller: medicamentosController,
-                                  ),
+                                  ],
                                 ),
                               ),
+                              Container(
+                                // autogrouprf3t9vE (QxAU9H6dpsMUEgrFG5rF3t)
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 15 * fem),
+                                width: double.infinity,
+                                height: 47 * fem,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: const Color(0xffbbbbbb)),
+                                  borderRadius: BorderRadius.circular(15 * fem),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      left: 0 * fem,
+                                      top: 0 * fem,
+                                      child: Align(
+                                        child: SizedBox(
+                                          width: 304 * fem,
+                                          height: 47 * fem,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      15 * fem),
+                                              // border: Border.all(color: Color(0xff000000)),
+                                            ),
+                                            child: TextFormField(
+                                              style: GoogleFonts.libreFranklin(
+                                                fontSize: 15 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.21 * ffem / fem,
+                                                color: const Color(0xff000000),
+                                              ),
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                hintText:
+                                                    '       Tipo de sangre    ',
+                                                contentPadding: EdgeInsets.only(
+                                                    left: 40 * fem),
+                                                errorBorder:
+                                                    const OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    28)),
+                                                        borderSide: BorderSide(
+                                                          width: 1,
+                                                          color: Colors.red,
+                                                        )),
+                                                focusedErrorBorder:
+                                                    const OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(28)),
+                                                  borderSide: BorderSide(
+                                                    width: 1,
+                                                    color: Colors.red,
+                                                  ),
+                                                ),
+                                              ),
+                                              controller: tipoSangreController,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                // autogrouprf3t9vE (QxAU9H6dpsMUEgrFG5rF3t)
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 15 * fem),
+                                width: double.infinity,
+                                height: 47 * fem,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: const Color(0xffbbbbbb)),
+                                  borderRadius: BorderRadius.circular(15 * fem),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      left: 0 * fem,
+                                      top: 0 * fem,
+                                      child: Align(
+                                        child: SizedBox(
+                                          width: 304 * fem,
+                                          height: 47 * fem,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      15 * fem),
+                                              // border: Border.all(color: Color(0xff000000)),
+                                            ),
+                                            child: TextFormField(
+                                              style: GoogleFonts.libreFranklin(
+                                                fontSize: 15 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.21 * ffem / fem,
+                                                color: const Color(0xff000000),
+                                              ),
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                hintText:
+                                                    '       Enfermedades    ',
+                                                contentPadding: EdgeInsets.only(
+                                                    left: 40 * fem),
+                                                errorBorder:
+                                                    const OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    28)),
+                                                        borderSide: BorderSide(
+                                                          width: 1,
+                                                          color: Colors.red,
+                                                        )),
+                                                focusedErrorBorder:
+                                                    const OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(28)),
+                                                  borderSide: BorderSide(
+                                                    width: 1,
+                                                    color: Colors.red,
+                                                  ),
+                                                ),
+                                              ),
+                                              controller:
+                                                  enfermedadesController,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                // autogrouprf3t9vE (QxAU9H6dpsMUEgrFG5rF3t)
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 15 * fem),
+                                width: double.infinity,
+                                height: 47 * fem,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: const Color(0xffbbbbbb)),
+                                  borderRadius: BorderRadius.circular(15 * fem),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      left: 0 * fem,
+                                      top: 0 * fem,
+                                      child: Align(
+                                        child: SizedBox(
+                                          width: 304 * fem,
+                                          height: 47 * fem,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      15 * fem),
+                                              // border: Border.all(color: Color(0xff000000)),
+                                            ),
+                                            child: TextFormField(
+                                              style: GoogleFonts.libreFranklin(
+                                                fontSize: 15 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.21 * ffem / fem,
+                                                color: const Color(0xff000000),
+                                              ),
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                hintText: '       Alergias    ',
+                                                contentPadding: EdgeInsets.only(
+                                                    left: 40 * fem),
+                                                errorBorder:
+                                                    const OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    28)),
+                                                        borderSide: BorderSide(
+                                                          width: 1,
+                                                          color: Colors.red,
+                                                        )),
+                                                focusedErrorBorder:
+                                                    const OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(28)),
+                                                  borderSide: BorderSide(
+                                                    width: 1,
+                                                    color: Colors.red,
+                                                  ),
+                                                ),
+                                              ),
+                                              controller: alergiasController,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                // autogrouprf3t9vE (QxAU9H6dpsMUEgrFG5rF3t)
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 15 * fem),
+                                width: double.infinity,
+                                height: 47 * fem,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: const Color(0xffbbbbbb)),
+                                  borderRadius: BorderRadius.circular(15 * fem),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      left: 0 * fem,
+                                      top: 0 * fem,
+                                      child: Align(
+                                        child: SizedBox(
+                                          width: 304 * fem,
+                                          height: 47 * fem,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      15 * fem),
+                                              // border: Border.all(color: Color(0xff000000)),
+                                            ),
+                                            child: TextFormField(
+                                              style: GoogleFonts.libreFranklin(
+                                                fontSize: 15 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.21 * ffem / fem,
+                                                color: const Color(0xff000000),
+                                              ),
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                hintText:
+                                                    '       Medicamentos    ',
+                                                contentPadding: EdgeInsets.only(
+                                                    left: 40 * fem),
+                                                errorBorder:
+                                                    const OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    28)),
+                                                        borderSide: BorderSide(
+                                                          width: 1,
+                                                          color: Colors.red,
+                                                        )),
+                                                focusedErrorBorder:
+                                                    const OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(28)),
+                                                  borderSide: BorderSide(
+                                                    width: 1,
+                                                    color: Colors.red,
+                                                  ),
+                                                ),
+                                              ),
+                                              controller:
+                                                  medicamentosController,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
                               // SingleChildScrollView(
                               //   scrollDirection: Axis.vertical,
                               //   child: Container(
@@ -357,7 +564,7 @@ class _MyFormularioState extends State<MyFormulario> {
                               // ),
                               TextButton(
                                 onPressed: () async {
-                                  enviardato(context);
+                                  enviardato();
                                 },
                                 child: Container(
                                   margin: EdgeInsets.fromLTRB(
@@ -365,7 +572,7 @@ class _MyFormularioState extends State<MyFormulario> {
                                   width: double.infinity,
                                   height: 35 * fem,
                                   decoration: BoxDecoration(
-                                    color: Color(0xff5b7ad9),
+                                    color: const Color(0xff5b7ad9),
                                     borderRadius:
                                         BorderRadius.circular(15 * fem),
                                   ),
@@ -376,7 +583,7 @@ class _MyFormularioState extends State<MyFormulario> {
                                         fontSize: 16 * ffem,
                                         fontWeight: FontWeight.w700,
                                         height: 1.21 * ffem / fem,
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                       ),
                                     ),
                                   ),

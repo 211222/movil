@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:untitled/pages/pages/formulario_page.dart';
-import 'package:untitled/pages/pages/informacion_page.dart';
 import 'package:untitled/pages/services/user_service.dart';
 
 class MyRegistro extends StatefulWidget {
@@ -37,14 +36,14 @@ class _MyRegistroState extends State<MyRegistro> {
         title: Text(widget.title),
       ),
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           child: TextButton(
             onPressed: () {},
             style: TextButton.styleFrom(padding: EdgeInsets.zero),
             child: Container(
               width: double.infinity,
-              decoration: BoxDecoration(color: Color(0xffffffff)),
+              decoration: const BoxDecoration(color: Color(0xffffffff)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -97,7 +96,7 @@ class _MyRegistroState extends State<MyRegistro> {
                                         fontSize: 25 * ffem,
                                         fontWeight: FontWeight.w700,
                                         height: 1.2925 * ffem / fem,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                     ),
                                   ),
@@ -113,7 +112,7 @@ class _MyRegistroState extends State<MyRegistro> {
                           width: double.infinity,
                           height: 47 * fem,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xffbbbbbb)),
+                            border: Border.all(color: const Color(0xffbbbbbb)),
                             borderRadius: BorderRadius.circular(15 * fem),
                           ),
                           child: Stack(
@@ -136,7 +135,7 @@ class _MyRegistroState extends State<MyRegistro> {
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.21 * ffem / fem,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -175,7 +174,7 @@ class _MyRegistroState extends State<MyRegistro> {
                                     width: 17 * fem,
                                     height: 17 * fem,
                                     child: Image.asset(
-                                      'assets/image-14-7S6.png',
+                                      'assets/image-19-vzz.png',
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -191,7 +190,7 @@ class _MyRegistroState extends State<MyRegistro> {
                           width: double.infinity,
                           height: 47 * fem,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xffbbbbbb)),
+                            border: Border.all(color: const Color(0xffbbbbbb)),
                             borderRadius: BorderRadius.circular(15 * fem),
                           ),
                           child: Stack(
@@ -214,7 +213,7 @@ class _MyRegistroState extends State<MyRegistro> {
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.21 * ffem / fem,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -269,8 +268,7 @@ class _MyRegistroState extends State<MyRegistro> {
                           width: double.infinity,
                           height: 47 * fem,
                           decoration: BoxDecoration(
-                            border: Border.all(
-                                color: const Color.fromARGB(255, 31, 21, 21)),
+                            border: Border.all(color: const Color(0xffbbbbbb)),
                             borderRadius: BorderRadius.circular(15 * fem),
                           ),
                           child: Stack(
@@ -293,14 +291,13 @@ class _MyRegistroState extends State<MyRegistro> {
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.21 * ffem / fem,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: '       Correo    ',
                                           contentPadding:
                                               EdgeInsets.only(left: 40 * fem),
-                                          filled: true,
                                           errorBorder: const OutlineInputBorder(
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(28)),
@@ -333,7 +330,7 @@ class _MyRegistroState extends State<MyRegistro> {
                                     width: 17 * fem,
                                     height: 17 * fem,
                                     child: Image.asset(
-                                      'assets/image-16-nMt.png',
+                                      'assets/image-17-BPk.png',
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -349,7 +346,7 @@ class _MyRegistroState extends State<MyRegistro> {
                           width: double.infinity,
                           height: 47 * fem,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xffbbbbbb)),
+                            border: Border.all(color: const Color(0xffbbbbbb)),
                             borderRadius: BorderRadius.circular(15 * fem),
                           ),
                           child: Stack(
@@ -373,13 +370,13 @@ class _MyRegistroState extends State<MyRegistro> {
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.21 * ffem / fem,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: '       Contraseña    ',
-                                          contentPadding:
-                                              EdgeInsets.only(left: 40 * fem),
+                                          contentPadding: EdgeInsets.only(
+                                              left: 40 * fem, top: 13 * fem),
                                           errorBorder: const OutlineInputBorder(
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(28)),
@@ -439,7 +436,7 @@ class _MyRegistroState extends State<MyRegistro> {
                         Center(
                           child: Text(
                             error,
-                            style: TextStyle(color: Colors.red),
+                            style: const TextStyle(color: Colors.red),
                           ),
                         ),
                         ElevatedButton(
@@ -449,21 +446,7 @@ class _MyRegistroState extends State<MyRegistro> {
                                 _lastNameController.text == '' ||
                                 _passwordController.text == '' ||
                                 _correoController.text == '') {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    title: Text('Error'),
-                                    content: Text('Completa los campos'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () => Navigator.pop(context),
-                                        child: Text('Cerrar'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
+                              _showErrorDialog('Completa los campos');
                             } else {
                               try {
                                 UserService userService = UserService();
@@ -473,18 +456,17 @@ class _MyRegistroState extends State<MyRegistro> {
                                   _passwordController.text,
                                   _correoController.text,
                                 );
+                               
                                 if (mensaje == "200") {
-                                  Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const MyFormulario()),
-                                  );
+                                  _navigateToMyFormulario();
                                 }
                               } catch (e) {
-                                setState(() {
-                                  error = e.toString();
-                                });
+                                if (mounted) {
+                                  // Verifica si el widget aún está montado antes de llamar a setState
+                                  setState(() {
+                                    error = e.toString();
+                                  });
+                                }
                               }
                             }
                           },
@@ -494,7 +476,7 @@ class _MyRegistroState extends State<MyRegistro> {
                             width: double.infinity,
                             height: 47 * fem,
                             decoration: BoxDecoration(
-                              color: Color(0xff5b7ad9),
+                              color: const Color(0xff5b7ad9),
                               borderRadius: BorderRadius.circular(15 * fem),
                             ),
                             child: Center(
@@ -504,7 +486,7 @@ class _MyRegistroState extends State<MyRegistro> {
                                   fontSize: 16 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2925 * ffem / fem,
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                 ),
                               ),
                             ),
@@ -520,14 +502,14 @@ class _MyRegistroState extends State<MyRegistro> {
                               fontSize: 12 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2125 * ffem / fem,
-                              color: Color(0xff000000),
+                              color: const Color(0xff000000),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     height: 179.40 * fem,
                     child: Stack(
@@ -598,12 +580,12 @@ class _MyRegistroState extends State<MyRegistro> {
                               height: 39 * fem,
                               child: InkWell(
                                 onTap: () async {
-                                  final GoogleSignIn _googleSignIn =
+                                  final GoogleSignIn googleSignIn =
                                       GoogleSignIn();
                                   // Lógica para iniciar sesión con Google
                                   try {
                                     final GoogleSignInAccount? googleUser =
-                                        await _googleSignIn.signIn();
+                                        await googleSignIn.signIn();
 
                                     if (googleUser != null) {
                                       // El inicio de sesión con Google fue exitoso.
@@ -660,6 +642,35 @@ class _MyRegistroState extends State<MyRegistro> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  // Función para mostrar un diálogo de error
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Error'),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cerrar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  // Función para navegar a MyFormulario
+  void _navigateToMyFormulario() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const MyFormulario(),
       ),
     );
   }

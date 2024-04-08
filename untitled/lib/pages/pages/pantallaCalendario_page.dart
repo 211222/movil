@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:untitled/pages/pages/datosPaciente_page.dart';
-import 'package:untitled/pages/pages/home_page.dart';
 import 'package:untitled/pages/pages/loginPaciente_page.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class PantallaCalendario extends StatefulWidget {
-  const PantallaCalendario({Key? key, required this.title}) : super(key: key);
+  const PantallaCalendario({super.key, required this.title});
 
   final String title;
 
@@ -73,14 +67,14 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 360;
+    double baseWidth = 350;
     double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
+    double ffem = fem * 0.95;
     return SingleChildScrollView(
       child: Container(
         // pantallaprincipalpacienteaZ4 (168:45)
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -89,29 +83,29 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
             Container(
               // autogrouptfjeWhc (QxAbbUr9L1ihzxuicVTFJe)
               margin:
-                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 40.36 * fem),
-              width: 401.25 * fem,
+                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 20.36 * fem),
+              width: 430.25 * fem,
               height: 221.64 * fem,
               child: Stack(
                 children: [
                   Positioned(
                     // eduardojimnezENi (168:47)
-                    left: 176 * fem,
+                    left: 105 * fem,
                     top: 63 * fem,
                     child: Align(
                       child: SizedBox(
                         width: 98 * fem,
-                        height: 15 * fem,
+                        height: 25 * fem,
                         child: Text(
                           pacientes.isNotEmpty &&
                                   pacientes[0].containsKey('nombre')
-                              ? pacientes[0]['nombre'] ?? 'N/A'
+                              ? '${pacientes[0]['nombre']} ${pacientes[0]['apellido']}'
                               : 'N/A',
                           style: GoogleFonts.libreFranklin(
                             fontSize: 12 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.21 * ffem / fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -159,21 +153,21 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                       },
                       child: Material(
                         borderRadius: BorderRadius.circular(15 * fem),
-                        color: Color(0xff5b7ad9),
+                        color: const Color(0xff5b7ad9),
                         child: InkWell(
                           borderRadius: BorderRadius.circular(15 * fem),
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MyLogin_Paciente(
+                                  builder: (context) => const MyLogin_Paciente(
                                       title:
                                           '')), // Reemplaza MyLoginDoctor con el nombre de tu página de destino
                             );
 
                             // Aquí colocas la función que quieres que se ejecute cuando se presione el botón
                           },
-                          child: Container(
+                          child: SizedBox(
                             width: 54 * fem,
                             height: 27 * fem,
                             child: Center(
@@ -204,7 +198,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
               width: double.infinity,
               height: 122 * fem,
               decoration: BoxDecoration(
-                color: Color(0xffdedede),
+                color: const Color(0xffdedede),
                 borderRadius: BorderRadius.circular(10 * fem),
               ),
               child: Row(
@@ -237,7 +231,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                             fontSize: 12 * ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.21 * ffem / fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ],
@@ -255,7 +249,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                       height: 20 * fem,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     // autogroupszqeQkN (QxAc1dpZd68g4h3LLHSzQe)
                     height: double.infinity,
 
@@ -284,7 +278,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                 0 * fem, 0 * fem, 1 * fem, 3 * fem),
                             width: 27 * fem,
                             height: 29 * fem,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage('assets/group-14-vUe.png'),
                                 fit: BoxFit.cover,
@@ -299,7 +293,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                             fontSize: 12 * ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.21 * ffem / fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ],
@@ -308,7 +302,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               // autogroupvv6wQdt (QxAcBYhiPhLufpXfC2vV6W)
               width: double.infinity,
               height: 424.53 * fem,
@@ -323,7 +317,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                           0 * fem, 4 * fem, 0 * fem, 0 * fem),
                       width: 282 * fem,
                       height: 265 * fem,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xffffffff),
                       ),
                       child: Column(
@@ -341,7 +335,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                   fontSize: 14 * ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.1725 * ffem / fem,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ),
@@ -353,7 +347,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                             padding: EdgeInsets.fromLTRB(
                                 3 * fem, 1.5 * fem, 3.5 * fem, 1.5 * fem),
                             width: double.infinity,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xffffffff),
                             ),
                             child: Row(
@@ -371,7 +365,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 12 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff6d7680),
+                                        color: const Color(0xff6d7680),
                                       ),
                                     ),
                                   ),
@@ -388,7 +382,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 12 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff6d7680),
+                                        color: const Color(0xff6d7680),
                                       ),
                                     ),
                                   ),
@@ -405,7 +399,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 12 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff6d7680),
+                                        color: const Color(0xff6d7680),
                                       ),
                                     ),
                                   ),
@@ -422,7 +416,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 12 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff6d7680),
+                                        color: const Color(0xff6d7680),
                                       ),
                                     ),
                                   ),
@@ -439,7 +433,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 12 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff6d7680),
+                                        color: const Color(0xff6d7680),
                                       ),
                                     ),
                                   ),
@@ -456,7 +450,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 12 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff6d7680),
+                                        color: const Color(0xff6d7680),
                                       ),
                                     ),
                                   ),
@@ -470,7 +464,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 12 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff6d7680),
+                                      color: const Color(0xff6d7680),
                                     ),
                                   ),
                                 ),
@@ -484,7 +478,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                             padding: EdgeInsets.fromLTRB(
                                 7 * fem, 6.5 * fem, 11 * fem, 6.5 * fem),
                             width: double.infinity,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xffffffff),
                             ),
                             child: Row(
@@ -502,7 +496,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -519,7 +513,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -536,7 +530,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -553,7 +547,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -570,7 +564,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -587,7 +581,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -601,7 +595,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -615,7 +609,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                             padding: EdgeInsets.fromLTRB(
                                 11 * fem, 6.5 * fem, 7 * fem, 6.5 * fem),
                             width: double.infinity,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xffffffff),
                             ),
                             child: Row(
@@ -633,7 +627,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -650,7 +644,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -667,7 +661,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -684,7 +678,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -701,7 +695,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -718,7 +712,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1725 * ffem / fem,
-                                        color: Color(0xff262c33),
+                                        color: const Color(0xff262c33),
                                       ),
                                     ),
                                   ),
@@ -732,7 +726,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -746,7 +740,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                             padding: EdgeInsets.fromLTRB(
                                 7 * fem, 6.5 * fem, 7 * fem, 6.5 * fem),
                             width: double.infinity,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xffffffff),
                             ),
                             child: Row(
@@ -761,7 +755,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -777,7 +771,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -793,7 +787,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -809,7 +803,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -825,7 +819,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -841,7 +835,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -857,7 +851,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -871,7 +865,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                             padding: EdgeInsets.fromLTRB(
                                 7 * fem, 6.5 * fem, 7 * fem, 6.5 * fem),
                             width: double.infinity,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xffffffff),
                             ),
                             child: Row(
@@ -886,7 +880,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -902,7 +896,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -918,7 +912,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -934,7 +928,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -950,7 +944,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -966,7 +960,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -982,7 +976,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),
@@ -995,7 +989,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                 0 * fem, 0 * fem, 11 * fem, 0 * fem),
                             width: double.infinity,
                             height: 30 * fem,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xffffffff),
                             ),
                             child: Row(
@@ -1022,7 +1016,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                               fontSize: 14 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.1725 * ffem / fem,
-                                              color: Color(0xff262c33),
+                                              color: const Color(0xff262c33),
                                             ),
                                           ),
                                         ),
@@ -1036,7 +1030,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.1725 * ffem / fem,
-                                            color: Color(0xff262c33),
+                                            color: const Color(0xff262c33),
                                           ),
                                         ),
                                       ),
@@ -1049,7 +1043,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       0 * fem, 0 * fem, 12 * fem, 0 * fem),
                                   width: 30 * fem,
                                   height: double.infinity,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xffd9242f),
                                   ),
                                   child: Center(
@@ -1061,7 +1055,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                           fontSize: 14 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.1725 * ffem / fem,
-                                          color: Color(0xff262c33),
+                                          color: const Color(0xff262c33),
                                         ),
                                       ),
                                     ),
@@ -1073,7 +1067,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       0 * fem, 0 * fem, 12 * fem, 0 * fem),
                                   width: 30 * fem,
                                   height: double.infinity,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xffd9242f),
                                   ),
                                   child: Center(
@@ -1085,7 +1079,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                           fontSize: 14 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.1725 * ffem / fem,
-                                          color: Color(0xff262c33),
+                                          color: const Color(0xff262c33),
                                         ),
                                       ),
                                     ),
@@ -1099,7 +1093,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         0 * fem, 0 * fem, 12 * fem, 0 * fem),
                                     width: 30 * fem,
                                     height: double.infinity,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color(0x7f38cf35),
                                     ),
                                     child: Center(
@@ -1111,7 +1105,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.1725 * ffem / fem,
-                                            color: Color(0xff262c33),
+                                            color: const Color(0xff262c33),
                                           ),
                                         ),
                                       ),
@@ -1126,7 +1120,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                         0 * fem, 0 * fem, 23 * fem, 0 * fem),
                                     width: 30 * fem,
                                     height: double.infinity,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color(0x7fd9242f),
                                     ),
                                     child: Center(
@@ -1138,7 +1132,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.1725 * ffem / fem,
-                                            color: Color(0xff262c33),
+                                            color: const Color(0xff262c33),
                                           ),
                                         ),
                                       ),
@@ -1154,7 +1148,7 @@ class _PantallaCalendarioState extends State<PantallaCalendario> {
                                       fontSize: 14 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.1725 * ffem / fem,
-                                      color: Color(0xff262c33),
+                                      color: const Color(0xff262c33),
                                     ),
                                   ),
                                 ),

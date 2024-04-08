@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:untitled/pages/pages/informacion_page.dart';
 
 
 
 class TablaCitas extends StatefulWidget {
-  const TablaCitas({Key? key, required this.title}) : super(key: key);
+  const TablaCitas({super.key, required this.title});
 
   final String title;
 
@@ -33,7 +29,7 @@ class _TablaCitasState extends State<TablaCitas> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return SingleChildScrollView(
-      child: Container(
+      child: SizedBox(
           width: double.infinity,
           child: TextButton(
             // tabladecitasDjU (168:222)
@@ -43,13 +39,13 @@ class _TablaCitasState extends State<TablaCitas> {
             ),
             child: Container(
               width: double.infinity,
-              decoration: BoxDecoration (
+              decoration: const BoxDecoration (
                 color: Color(0xffffffff),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     // autogroupnf4aYFx (QxAfo7MCNFESUYrXu2Nf4A)
                     width: double.infinity,
                     height: 369.33*fem,
@@ -69,7 +65,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                   fontSize: 22*ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2925*ffem/fem,
-                                  color: Color(0xff5b7ad9),
+                                  color: const Color(0xff5b7ad9),
                                 ),
                               ),
                             ),
@@ -121,7 +117,7 @@ class _TablaCitasState extends State<TablaCitas> {
                               height: 27*fem,
                               child: Container(
                                 decoration: BoxDecoration (
-                                  color: Color(0xff5b7ad9),
+                                  color: const Color(0xff5b7ad9),
                                   borderRadius: BorderRadius.only (
                                     topLeft: Radius.circular(9*fem),
                                     topRight: Radius.circular(9*fem),
@@ -141,14 +137,14 @@ class _TablaCitasState extends State<TablaCitas> {
                               height: 104*fem,
                               child: Container(
                                 decoration: BoxDecoration (
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                   borderRadius: BorderRadius.only (
                                     bottomRight: Radius.circular(10*fem),
                                     bottomLeft: Radius.circular(10*fem),
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Color(0x3f000000),
+                                      color: const Color(0x3f000000),
                                       offset: Offset(0*fem, 4*fem),
                                       blurRadius: 9*fem,
                                     ),
@@ -175,7 +171,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                   );
                                 },
                                 style: TextButton.styleFrom(
-                                  backgroundColor: Color(0xff5b7ad9),
+                                  backgroundColor: const Color(0xff5b7ad9),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5 * fem),
                                   ),
@@ -186,7 +182,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                     fontSize: 11 * ffem,
                                     fontWeight: FontWeight.w600,
                                     height: 1.21 * ffem / fem,
-                                    color: Color(0xffffffff),
+                                    color: const Color(0xffffffff),
                                   ),
                                 ),
                               ),
@@ -206,7 +202,7 @@ class _TablaCitasState extends State<TablaCitas> {
                               child: Container(
                                 decoration: BoxDecoration (
                                   borderRadius: BorderRadius.circular(5*fem),
-                                  color: Color(0xff55d9d9),
+                                  color: const Color(0xff55d9d9),
                                 ),
                               ),
                             ),
@@ -226,7 +222,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                   fontSize: 11*ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.21*ffem/fem,
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                 ),
                               ),
                             ),
@@ -261,7 +257,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                     height: 27*fem,
                                     child: Container(
                                       decoration: BoxDecoration (
-                                        color: Color(0xff5b7ad9),
+                                        color: const Color(0xff5b7ad9),
                                         borderRadius: BorderRadius.only (
                                           topLeft: Radius.circular(10*fem),
                                           topRight: Radius.circular(10*fem),
@@ -281,14 +277,14 @@ class _TablaCitasState extends State<TablaCitas> {
                                     height: 104*fem,
                                     child: Container(
                                       decoration: BoxDecoration (
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                         borderRadius: BorderRadius.only (
                                           bottomRight: Radius.circular(10*fem),
                                           bottomLeft: Radius.circular(10*fem),
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Color(0x3f000000),
+                                            color: const Color(0x3f000000),
                                             offset: Offset(0*fem, 4*fem),
                                             blurRadius: 2*fem,
                                           ),
@@ -316,7 +312,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                         );
                                       },
                                       style: TextButton.styleFrom(
-                                        backgroundColor: Color(0xff5b7ad9),
+                                        backgroundColor: const Color(0xff5b7ad9),
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(5 * fem),
                                         ),
@@ -327,7 +323,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                           fontSize: 11 * ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.21 * ffem / fem,
-                                          color: Color(0xffffffff),
+                                          color: const Color(0xffffffff),
                                         ),
                                       ),
                                     ),
@@ -346,7 +342,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                     child: Container(
                                       decoration: BoxDecoration (
                                         borderRadius: BorderRadius.circular(5*fem),
-                                        color: Color(0xff55d9d9),
+                                        color: const Color(0xff55d9d9),
                                       ),
                                     ),
                                   ),
@@ -366,7 +362,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                         fontSize: 11*ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.21*ffem/fem,
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                       ),
                                     ),
                                   ),
@@ -375,7 +371,7 @@ class _TablaCitasState extends State<TablaCitas> {
                             ],
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           // autogrouplnsgxri (QxAgFM6Uko2UNbcohRLNsg)
                           width: double.infinity,
                           height: 130*fem,
@@ -391,7 +387,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                     height: 27*fem,
                                     child: Container(
                                       decoration: BoxDecoration (
-                                        color: Color(0xff5b7ad9),
+                                        color: const Color(0xff5b7ad9),
                                         borderRadius: BorderRadius.only (
                                           topLeft: Radius.circular(10*fem),
                                           topRight: Radius.circular(10*fem),
@@ -411,14 +407,14 @@ class _TablaCitasState extends State<TablaCitas> {
                                     height: 104*fem,
                                     child: Container(
                                       decoration: BoxDecoration (
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                         borderRadius: BorderRadius.only (
                                           bottomRight: Radius.circular(10*fem),
                                           bottomLeft: Radius.circular(10*fem),
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Color(0x3f000000),
+                                            color: const Color(0x3f000000),
                                             offset: Offset(0*fem, 4*fem),
                                             blurRadius: 2*fem,
                                           ),
@@ -446,7 +442,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                         );
                                       },
                                       style: TextButton.styleFrom(
-                                        backgroundColor: Color(0xff5b7ad9),
+                                        backgroundColor: const Color(0xff5b7ad9),
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(5 * fem),
                                         ),
@@ -457,7 +453,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                           fontSize: 11 * ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.21 * ffem / fem,
-                                          color: Color(0xffffffff),
+                                          color: const Color(0xffffffff),
                                         ),
                                       ),
                                     ),
@@ -476,7 +472,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                     child: Container(
                                       decoration: BoxDecoration (
                                         borderRadius: BorderRadius.circular(5*fem),
-                                        color: Color(0xff55d9d9),
+                                        color: const Color(0xff55d9d9),
                                       ),
                                     ),
                                   ),
@@ -496,7 +492,7 @@ class _TablaCitasState extends State<TablaCitas> {
                                         fontSize: 11*ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.21*ffem/fem,
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                       ),
                                     ),
                                   ),

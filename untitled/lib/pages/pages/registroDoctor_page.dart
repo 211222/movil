@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:untitled/pages/pages/tablaCitas_page.dart';
 
 
 
 class RegistroDoctor extends StatefulWidget {
-  const RegistroDoctor({Key? key, required this.title}) : super(key: key);
+  const RegistroDoctor({super.key, required this.title});
 
   final String title;
 
@@ -18,10 +14,10 @@ class RegistroDoctor extends StatefulWidget {
 }
 
 class _RegistroDoctorState extends State<RegistroDoctor> {
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _apellidoController = TextEditingController();
-  TextEditingController _cedulaController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _apellidoController = TextEditingController();
+  final TextEditingController _cedulaController = TextEditingController();
 
 
 
@@ -32,7 +28,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
     double ffem = fem * 0.97;
 
     return SingleChildScrollView(
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         child: TextButton(
           // registrodoctorrEz (164:45)
@@ -42,7 +38,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
           ),
           child: Container(
             width: double.infinity,
-            decoration: BoxDecoration (
+            decoration: const BoxDecoration (
               color: Color(0xffffffff),
             ),
             child: Column(
@@ -94,7 +90,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                                       fontSize: 25*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2925*ffem/fem,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                   ),
                                 ),
@@ -109,7 +105,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         width: double.infinity,
                         height: 47*fem,
                         decoration: BoxDecoration (
-                          border: Border.all(color: Color(0xffbbbbbb)),
+                          border: Border.all(color: const Color(0xffbbbbbb)),
                           borderRadius: BorderRadius.circular(15*fem),
                         ),
                         child: Stack(
@@ -131,7 +127,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                                         fontSize: 15 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.21 * ffem / fem,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                       decoration: InputDecoration(
                                         border: InputBorder.none,
@@ -171,7 +167,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         width: double.infinity,
                         height: 47*fem,
                         decoration: BoxDecoration (
-                          border: Border.all(color: Color(0xffbbbbbb)),
+                          border: Border.all(color: const Color(0xffbbbbbb)),
                           borderRadius: BorderRadius.circular(15*fem),
                         ),
                         child: Stack(
@@ -193,7 +189,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                                         fontSize: 15 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.21 * ffem / fem,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                       decoration: InputDecoration(
                                         border: InputBorder.none,
@@ -248,7 +244,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                                         fontSize: 15 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.21 * ffem / fem,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                       decoration: InputDecoration(
                                         border: InputBorder.none,
@@ -272,7 +268,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                                   child: Container(
                                     decoration: BoxDecoration (
                                       borderRadius: BorderRadius.circular(15*fem),
-                                      border: Border.all(color: Color(0xffbbbbbb)),
+                                      border: Border.all(color: const Color(0xffbbbbbb)),
                                     ),
                                   ),
                                 ),
@@ -303,7 +299,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         width: double.infinity,
                         height: 47*fem,
                         decoration: BoxDecoration (
-                          border: Border.all(color: Color(0xffbbbbbb)),
+                          border: Border.all(color: const Color(0xffbbbbbb)),
                           borderRadius: BorderRadius.circular(15*fem),
                         ),
                         child: Stack(
@@ -339,7 +335,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                                       fontSize: 15*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2925*ffem/fem,
-                                      color: Color(0x7f000000),
+                                      color: const Color(0x7f000000),
                                     ),
                                   ),
                                 ),
@@ -368,7 +364,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         width: double.infinity,
                         height: 47*fem,
                         decoration: BoxDecoration (
-                          border: Border.all(color: Color(0xffbbbbbb)),
+                          border: Border.all(color: const Color(0xffbbbbbb)),
                           borderRadius: BorderRadius.circular(15*fem),
                         ),
                         child: Stack(
@@ -404,7 +400,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                                       fontSize: 15*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2925*ffem/fem,
-                                      color: Color(0x7f000000),
+                                      color: const Color(0x7f000000),
                                     ),
                                   ),
                                 ),
@@ -441,13 +437,13 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
               );
             },
             style: TextButton.styleFrom(
-              backgroundColor: Color(0xff5b7ad9),
+              backgroundColor: const Color(0xff5b7ad9),
               padding: EdgeInsets.zero,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25 * fem),
               ),
             ),
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               height: 213.48 * fem,
               child: Stack(
@@ -478,7 +474,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                             child: Container(
                               decoration: BoxDecoration (
                                 borderRadius: BorderRadius.circular(15*fem),
-                                color: Color(0xff5b7ad9),
+                                color: const Color(0xff5b7ad9),
                               ),
                             ),
                           ),
@@ -498,7 +494,7 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                                 fontSize: 16*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2925*ffem/fem,
-                                color: Color(0xffffffff),
+                                color: const Color(0xffffffff),
                               ),
                             ),
                           ),
