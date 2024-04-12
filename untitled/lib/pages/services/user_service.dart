@@ -6,7 +6,7 @@ class UserService {
   Future<String> createUser(
       String username, String lastname, String email, String password) async {
     final response = await http.post(
-      Uri.parse('http://192.168.100.11:4000/'),
+      Uri.parse('http://192.168.208.245:4000/'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -40,7 +40,7 @@ class UserService {
     id = int.tryParse(data!);
 
     final response = await http.post(
-      Uri.parse('http://192.168.100.11:4000/paciente'),
+      Uri.parse('http://192.168.0.21:4000/paciente'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/pages/pages/tablaCitas_page.dart';
+import 'package:untitled/pages/services/doctor_service.dart';
 
 
 
@@ -18,7 +19,8 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _apellidoController = TextEditingController();
   final TextEditingController _cedulaController = TextEditingController();
-
+  final TextEditingController _correoController= TextEditingController();
+  String error = "";
 
 
   @override
@@ -221,10 +223,14 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         ),
                       ),
                       Container(
-                        // autogroupjbreaT8 (QxAUZGQfZ2Y57b6D8njBre)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 17*fem),
+                        // autogroupe6qcyRQ (QxAUNc3mEHnhAk6Sy9E6qC)
+                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
                         width: double.infinity,
                         height: 47*fem,
+                        decoration: BoxDecoration (
+                          border: Border.all(color: const Color(0xffbbbbbb)),
+                          borderRadius: BorderRadius.circular(15*fem),
+                        ),
                         child: Stack(
                           children: [
                             Positioned(
@@ -258,31 +264,13 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                               ),
                             ),
                             Positioned(
-                              // rectangle47z14 (164:79)
-                              left: 0*fem,
-                              top: 0*fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 304*fem,
-                                  height: 47*fem,
-                                  child: Container(
-                                    decoration: BoxDecoration (
-                                      borderRadius: BorderRadius.circular(15*fem),
-                                      border: Border.all(color: const Color(0xffbbbbbb)),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-
-                            Positioned(
-                              // image22PJ6 (164:101)
+                              // image194jg (164:71)
                               left: 16*fem,
-                              top: 11*fem,
+                              top: 13*fem,
                               child: Align(
                                 child: SizedBox(
-                                  width: 18*fem,
-                                  height: 19*fem,
+                                  width: 17*fem,
+                                  height: 17*fem,
                                   child: Image.asset(
                                     'assets/image-22.png',
                                     fit: BoxFit.cover,
@@ -294,8 +282,8 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         ),
                       ),
                       Container(
-                        // autogroupgjaai5U (QxAUhqzhnHuPE7TKDqGJAa)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 16*fem),
+                        // autogroupe6qcyRQ (QxAUNc3mEHnhAk6Sy9E6qC)
+                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
                         width: double.infinity,
                         height: 47*fem,
                         decoration: BoxDecoration (
@@ -304,47 +292,40 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         ),
                         child: Stack(
                           children: [
-
                             Positioned(
-                              // image127dQ (164:56)
-                              left: 16*fem,
-                              top: 12*fem,
+                              left: 0 * fem,
+                              top: 0 * fem,
                               child: Align(
                                 child: SizedBox(
-                                  width: 17*fem,
-                                  height: 17*fem,
-                                  child: Image.asset(
-                                    'assets/image-12-56N.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            ),
-
-                            Positioned(
-                              // correowcS (164:66)
-                              left: 49*fem,
-                              top: 13*fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 46*fem,
-                                  height: 20*fem,
-                                  child: Text(
-                                    'Correo ',
-                                    style: GoogleFonts.ptSans(
-                                      fontSize: 15*ffem,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.2925*ffem/fem,
-                                      color: const Color(0x7f000000),
+                                  width: 304 * fem,
+                                  height: 47 * fem,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15 * fem),
+                                      // border: Border.all(color: Color(0xff000000)),
+                                    ),
+                                    child: TextFormField(
+                                      style: GoogleFonts.libreFranklin(
+                                        fontSize: 15 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.21 * ffem / fem,
+                                        color: const Color(0xff000000),
+                                      ),
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: '       Correo   ',
+                                        contentPadding: EdgeInsets.only(left: 40 * fem),
+                                      ),
+                                      controller: _correoController,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                             Positioned(
-                              // image16dkA (164:68)
+                              // image194jg (164:71)
                               left: 16*fem,
-                              top: 12*fem,
+                              top: 13*fem,
                               child: Align(
                                 child: SizedBox(
                                   width: 17*fem,
@@ -360,7 +341,8 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         ),
                       ),
                       Container(
-                        // autogroupwo7lwkr (QxAUsLit8c3CsBDWTrwo7L)
+                        // autogroupe6qcyRQ (QxAUNc3mEHnhAk6Sy9E6qC)
+                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
                         width: double.infinity,
                         height: 47*fem,
                         decoration: BoxDecoration (
@@ -369,47 +351,40 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                         ),
                         child: Stack(
                           children: [
-
                             Positioned(
-                              // image13xvr (164:57)
-                              left: 16*fem,
-                              top: 11*fem,
+                              left: 0 * fem,
+                              top: 0 * fem,
                               child: Align(
                                 child: SizedBox(
-                                  width: 17*fem,
-                                  height: 17*fem,
-                                  child: Image.asset(
-                                    'assets/image-13-Lut.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            ),
-
-                            Positioned(
-                              // contraseacVc (164:67)
-                              left: 45*fem,
-                              top: 14*fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 72*fem,
-                                  height: 20*fem,
-                                  child: Text(
-                                    'Contraseña',
-                                    style: GoogleFonts.ptSans(
-                                      fontSize: 15*ffem,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.2925*ffem/fem,
-                                      color: const Color(0x7f000000),
+                                  width: 304 * fem,
+                                  height: 47 * fem,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15 * fem),
+                                      // border: Border.all(color: Color(0xff000000)),
+                                    ),
+                                    child: TextFormField(
+                                      style: GoogleFonts.libreFranklin(
+                                        fontSize: 15 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.21 * ffem / fem,
+                                        color: const Color(0xff000000),
+                                      ),
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: '       Contraseña   ',
+                                        contentPadding: EdgeInsets.only(left: 40 * fem),
+                                      ),
+                                      controller: _passwordController,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                             Positioned(
-                              // image17X6n (164:69)
+                              // image194jg (164:71)
                               left: 16*fem,
-                              top: 11*fem,
+                              top: 13*fem,
                               child: Align(
                                 child: SizedBox(
                                   width: 17*fem,
@@ -424,17 +399,86 @@ class _RegistroDoctorState extends State<RegistroDoctor> {
                           ],
                         ),
                       ),
+
+
+
+
+
                     ],
                   ),
                 ),
 
 
+
           TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const TablaCitas(title: '')),
-              );
+            onPressed: () async {
+              // Verifica si el formulario es válido antes de continuar
+              if (_usernameController.text == '' ||
+                  _apellidoController.text == '' ||
+                  _passwordController.text == '' ||
+                  _cedulaController.text == '' ||
+                  _correoController.text == '') {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Formulario Incompleto'),
+                      content: Text('Por favor, completa todos los campos del formulario.'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('Cerrar'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+
+              } else {
+                try {
+                  DoctorService doctorService = DoctorService();
+                  String mensaje = await doctorService.createDoctor(
+                    _usernameController.text,
+                    _apellidoController.text,
+                    _passwordController.text,
+                    _cedulaController.text,
+                    _correoController.text,
+                  );
+
+                  if (mensaje == "200") {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text('Usuario creado exitosamente'),
+                          content: Text('El usuario se ha creado correctamente.'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(); // Cierra el diálogo
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const TablaCitas(title: '')),
+                                ); // Navega a la pantalla de citas
+                              },
+                              child: Text('Aceptar'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+                } catch (e) {
+                  if (mounted) {
+                    // Verifica si el widget aún está montado antes de llamar a setState
+                    setState(() {
+                      error = e.toString();
+                    });
+                  }
+                }
+              }
             },
             style: TextButton.styleFrom(
               backgroundColor: const Color(0xff5b7ad9),

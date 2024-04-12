@@ -31,7 +31,7 @@ class _InformacionState extends State<Informacion> {
   Future<void> getPacientes() async {
     try {
       // Realiza una solicitud GET al servidor backend
-      final response = await http.get(Uri.parse('http://192.168.100.11:4000/'));
+      final response = await http.get(Uri.parse('http://192.168.0.21:4000/'));
 
 
       if (response.statusCode == 200) {
